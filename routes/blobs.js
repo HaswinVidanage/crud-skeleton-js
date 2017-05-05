@@ -224,6 +224,8 @@ router.put('/:id/edit', function(req, res) {
 //DELETE a Blob by ID
 router.delete('/:id/edit', function (req, res){
     //find blob by ID
+    console.log("Delete called");
+    console.log(req.id);
     mongoose.model('Blob').findById(req.id, function (err, blob) {
         if (err) {
             return console.error(err);

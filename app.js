@@ -64,7 +64,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-
+exports.index = function(req, res) {
+    res.render('/blobs', {title: 'Blobs', menu: 'Blobs'});
+}
 
 
 module.exports = app;

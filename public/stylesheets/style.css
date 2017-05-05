@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+.btn {
+  width: 82.25px!important;
+}
+
+ul.home li.home { color: red; }
+ul.blog li.blog { color: red; }
+ul.contact li.contact { color: red; }
+ul.about li.about { color: red; }

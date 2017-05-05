@@ -1,8 +1,64 @@
 extends ../layout
 
+block navbar
+  - selected = 'Blobs';
 block content
+    script.
+        var confirmDelete = function() {
+          var returnVal = confirm('Are you sure ?');
+          return returnVal;
+        }
+
     h1.
          #{title}
+
+    div.container
+
+        p.lead
+          | Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.
+
+         table.table.table-hover.table-bordered.table-striped
+             thead.thead-inverse
+               tr
+                 th name
+                 th badge
+                 th dob
+                 th isloved
+                 th _id
+                 th options
+             tbody.table-striped
+               tr
+
+               tr
+
+               - each blob, i in blobs
+                 tr
+                   td
+                    = blob.name
+                   td
+                    = blob.badge
+                   td
+                    = blob.dob
+                   td
+                    = blob.isloved
+                   td
+                    = blob._id
+                   td
+                    table.table-bordered.table-sm
+                        tr
+                          td
+                            form(action='/blobs/#{blob._id}/edit',method='post',enctype='application/x-www-form-urlencoded',onsubmit="return confirmDelete();")
+                                    input(type='hidden',value='DELETE',name='_method')
+                                    button.btn.btn-danger(type='submit') Delete
+                        tr
+                          td
+                            a.btn.btn-warning(href='/blobs/#{blob._id}/edit') Edit
+                        tr
+                          td
+                            a.btn.btn-info(href='/blobs/#{blob._id}') Show
+
+
+//-
     ul
         - each blob, i in blobs
             li
