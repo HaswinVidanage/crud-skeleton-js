@@ -15,3 +15,8 @@ ul.home li.home { color: red; }
 ul.blog li.blog { color: red; }
 ul.contact li.contact { color: red; }
 ul.about li.about { color: red; }
+
+#login .controls .button-rememember-me {
+  float: left;
+  width: 150px!important;
+}

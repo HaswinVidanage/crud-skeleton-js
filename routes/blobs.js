@@ -52,6 +52,7 @@ var express = require('express'),
         })
         //POST a new blob
         .post(function(req, res) {
+            console.log('/post got fired');
             // Get values from POST request. These can be done through forms or REST calls. These rely on the "name" attributes for forms
             var name = req.body.name;
             var badge = req.body.badge;
